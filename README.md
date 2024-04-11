@@ -91,3 +91,8 @@ This is the place for you to write reflections:
 3. I have been using Postman to test the endpoints of app server. Postman is a powerful tool that allows us to send HTTP requests to our server and inspect the responses. It provides a user-friendly interface for creating and sending requests, as well as viewing the responses in various formats. Postman also allows us to save our requests and responses as collections, which can be shared with other team members or used for automated testing. Overall, I find Postman to be a valuable tool for testing and debugging my server-side applications.
 
 #### Reflection Publisher-3
+1. In this tutorial, we are using push model of observer pattern. We push data to the `NotificationService` whenever an event occurs. The `NotificationService` then notifies all the subscribers by sending an HTTP POST request to their respective endpoints. This approach is suitable for our use case because we want to notify the subscribers immediately when an event occurs. However, if we have a large number of subscribers or if the subscribers are slow to respond, this approach might not be the most efficient.
+
+2. In the pull model, users have to check for updates themselves, like refreshing a webpage. This can be less efficient because they might check even when there's nothing new. However, the pull model is better with a lot of users or slow devices. It avoids overwhelming the server with constant updates.
+
+3. Sending notifications without multi-threading works, but it's of course slower. The program waits for each notification to finish before sending the next one. This can be a big problem for a large number of subscribers or if sending each notification takes a long time.

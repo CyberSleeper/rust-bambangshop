@@ -77,6 +77,11 @@ This is the place for you to write reflections:
 ### Mandatory (Publisher) Reflections
 
 #### Reflection Publisher-1
+1. It depends on the complexity of our system. If we only want to have one type of Subscriber that will always react to changes in the same way, a single Model struct might be enough. However, if we anticipate needing different types of Subscribers in the future, or if our current Subscriber has multiple responsibilities that could be separated, it would be beneficial to define a Subscriber trait.
+
+2. Using a DashMap allows us to quickly check for uniqueness and access elements by their unique identifiers. This is useful when we want to quickly check if a Subscriber is already in the database, or when we want to access a Subscriber by its ID. The DashMap also allows us to easily remove a Subscriber from the database, which is useful when a Subscriber wants to unsubscribe. However, the DashMap does not guarantee the order of elements, so if we need to access elements in a specific order, we might need to use a different data structure.
+
+3. In Rust, the Singleton pattern can be implemented using lazy_static and Mutex for thread safety. However, this approach has some limitations compared to DashMap. We could replace DashMap with a Singleton pattern, it might not be the best choice if we need to support high levels of concurrency. DashMap is designed specifically for this use case and is likely to perform better.
 
 #### Reflection Publisher-2
 

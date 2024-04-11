@@ -84,5 +84,10 @@ This is the place for you to write reflections:
 3. In Rust, the Singleton pattern can be implemented using lazy_static and Mutex for thread safety. However, this approach has some limitations compared to DashMap. We could replace DashMap with a Singleton pattern, it might not be the best choice if we need to support high levels of concurrency. DashMap is designed specifically for this use case and is likely to perform better.
 
 #### Reflection Publisher-2
+1. This is commonly known as separation of concerns. By separating the concerns of the Notification service and the Notification Repository, we can make our code more modular and easier to maintain. The Notification service is responsible for handling the business logic of the Notification feature, while the Notification Repository is responsible for handling the data storage and retrieval operations. This separation allows us to change the implementation of the Notification Repository without affecting the Notification service, and vice versa.
+
+2. If we only use the model to encapsulate all responsibilites, the complexity of each model will increase significantly as we add more features. This will make the model harder to understand and maintain. By separating the concerns of the model into multiple structs, we can make each struct more focused and easier to understand. This also allows us to reuse the structs in different parts of the codebase, which can help reduce code duplication.
+
+3. I have been using Postman to test the endpoints of app server. Postman is a powerful tool that allows us to send HTTP requests to our server and inspect the responses. It provides a user-friendly interface for creating and sending requests, as well as viewing the responses in various formats. Postman also allows us to save our requests and responses as collections, which can be shared with other team members or used for automated testing. Overall, I find Postman to be a valuable tool for testing and debugging my server-side applications.
 
 #### Reflection Publisher-3
